@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1466685456">
+  <project timestamp="1466685456">
+    <package name="Zver\Exceptions\View">
+      <file name="C:\OpenServer\domains\view\src\Zver/Exceptions/View/ViewNotFoundException.php">
+        <class name="ViewNotFoundException" namespace="Zver\Exceptions\View">
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        </class>
+        <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="15" type="stmt" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <metrics loc="18" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </file>
+    </package>
+    <package name="Zver">
+      <file name="C:\OpenServer\domains\view\src\Zver/View.php">
+        <class name="View" namespace="Zver" fullPackage="Zver" package="Zver">
+          <metrics complexity="20" methods="13" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="49" elements="62" coveredelements="62"/>
+        </class>
+        <line num="33" type="method" name="__construct" visibility="protected" complexity="1" crap="1" count="14"/>
+        <line num="36" type="stmt" count="14"/>
+        <line num="46" type="method" name="loadFromFile" visibility="public" complexity="3" crap="3" count="14"/>
+        <line num="48" type="stmt" count="14"/>
+        <line num="49" type="stmt" count="14"/>
+        <line num="50" type="stmt" count="13"/>
+        <line num="51" type="stmt" count="13"/>
+        <line num="52" type="stmt" count="13"/>
+        <line num="54" type="stmt" count="8"/>
+        <line num="55" type="stmt" count="13"/>
+        <line num="57" type="stmt" count="13"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="67" type="method" name="setContent" visibility="protected" complexity="1" crap="1" count="14"/>
+        <line num="69" type="stmt" count="14"/>
+        <line num="70" type="stmt" count="14"/>
+        <line num="80" type="method" name="set" visibility="public" complexity="4" crap="4" count="13"/>
+        <line num="82" type="stmt" count="13"/>
+        <line num="83" type="stmt" count="13"/>
+        <line num="84" type="stmt" count="13"/>
+        <line num="85" type="stmt" count="13"/>
+        <line num="86" type="stmt" count="13"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="92" type="stmt" count="1"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="1"/>
+        <line num="95" type="stmt" count="1"/>
+        <line num="96" type="stmt" count="1"/>
+        <line num="99" type="stmt" count="13"/>
+        <line num="110" type="method" name="loadFromString" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="112" type="stmt" count="3"/>
+        <line num="113" type="stmt" count="3"/>
+        <line num="114" type="stmt" count="3"/>
+        <line num="116" type="stmt" count="1"/>
+        <line num="117" type="stmt" count="3"/>
+        <line num="119" type="stmt" count="3"/>
+        <line num="127" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="129" type="stmt" count="3"/>
+        <line num="137" type="method" name="render" visibility="public" complexity="1" crap="1" count="11"/>
+        <line num="139" type="stmt" count="11"/>
+        <line num="140" type="stmt" count="11"/>
+        <line num="141" type="stmt" count="11"/>
+        <line num="143" type="stmt" count="11"/>
+        <line num="152" type="method" name="processEscapedContent" visibility="protected" complexity="1" crap="1" count="11"/>
+        <line num="154" type="stmt" count="11"/>
+        <line num="155" type="stmt" count="11"/>
+        <line num="156" type="stmt" count="11"/>
+        <line num="158" type="stmt" count="11"/>
+        <line num="168" type="method" name="__get" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="170" type="stmt" count="1"/>
+        <line num="181" type="method" name="__set" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="183" type="stmt" count="1"/>
+        <line num="193" type="method" name="get" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="195" type="stmt" count="3"/>
+        <line num="196" type="stmt" count="3"/>
+        <line num="197" type="stmt" count="2"/>
+        <line num="200" type="stmt" count="1"/>
+        <line num="208" type="method" name="resetData" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="210" type="stmt" count="1"/>
+        <line num="212" type="stmt" count="1"/>
+        <line num="220" type="method" name="getAllData" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="222" type="stmt" count="1"/>
+        <metrics loc="227" ncloc="131" classes="1" methods="13" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="49" elements="62" coveredelements="62"/>
+      </file>
+    </package>
+    <metrics files="2" loc="245" ncloc="144" classes="2" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="51" elements="65" coveredelements="65"/>
+  </project>
+</coverage>

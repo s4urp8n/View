@@ -1,0 +1,14 @@
+
+
+Code Coverage Report:     
+  2016-06-23 15:37:36     
+                          
+ Summary:                 
+  Classes: 100.00% (2/2)  
+  Methods: 100.00% (14/14)
+  Lines:   100.00% (51/51)
+
+\Zver::View
+  Methods: 100.00% (13/13)   Lines: 100.00% ( 49/ 49)
+\Zver\Exceptions\View::ViewNotFoundException
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)

@@ -1,0 +1,613 @@
+<?php
+$coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
+$coverage->setData(array (
+  'C:\\OpenServer\\domains\\view\\src\\Zver\\View.php' => 
+  array (
+    36 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testSpecialFilesContent',
+      13 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    48 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testUnExistedFile',
+      8 => 'ViewCest:testMultipleSameValues',
+      9 => 'ViewCest:testMagic',
+      10 => 'ViewCest:testProcessingVariables',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testSpecialFilesContent',
+      13 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    49 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testUnExistedFile',
+      8 => 'ViewCest:testMultipleSameValues',
+      9 => 'ViewCest:testMagic',
+      10 => 'ViewCest:testProcessingVariables',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testSpecialFilesContent',
+      13 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    50 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadNoPHP',
+      11 => 'ViewCest:testSpecialFilesContent',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    51 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadNoPHP',
+      11 => 'ViewCest:testSpecialFilesContent',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    52 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadNoPHP',
+      11 => 'ViewCest:testSpecialFilesContent',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    54 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+    ),
+    55 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadNoPHP',
+      11 => 'ViewCest:testSpecialFilesContent',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    57 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadNoPHP',
+      11 => 'ViewCest:testSpecialFilesContent',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    58 => NULL,
+    59 => 
+    array (
+      0 => 'ViewCest:testUnExistedFile',
+    ),
+    60 => NULL,
+    69 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testSpecialFilesContent',
+      13 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    70 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testSpecialFilesContent',
+      13 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    82 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    83 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    84 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    85 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    86 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    89 => 
+    array (
+      0 => 'ViewCest:testMultipleSameValues',
+    ),
+    90 => 
+    array (
+      0 => 'ViewCest:testMultipleSameValues',
+    ),
+    92 => 
+    array (
+      0 => 'ViewCest:testMultipleSameValues',
+    ),
+    93 => 
+    array (
+      0 => 'ViewCest:testMultipleSameValues',
+    ),
+    94 => 
+    array (
+      0 => 'ViewCest:testMultipleSameValues',
+    ),
+    95 => 
+    array (
+      0 => 'ViewCest:testMultipleSameValues',
+    ),
+    96 => 
+    array (
+      0 => 'ViewCest:testMultipleSameValues',
+    ),
+    99 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testGet',
+      4 => 'ViewCest:testGetUnsetData',
+      5 => 'ViewCest:testToString',
+      6 => 'ViewCest:testLoad',
+      7 => 'ViewCest:testMultipleSameValues',
+      8 => 'ViewCest:testMagic',
+      9 => 'ViewCest:testProcessingVariables',
+      10 => 'ViewCest:testLoadFromString',
+      11 => 'ViewCest:testLoadNoPHP',
+      12 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    100 => NULL,
+    112 => 
+    array (
+      0 => 'ViewCest:testProcessingVariables',
+      1 => 'ViewCest:testLoadFromString',
+      2 => 'ViewCest:testLoadNoPHP',
+    ),
+    113 => 
+    array (
+      0 => 'ViewCest:testProcessingVariables',
+      1 => 'ViewCest:testLoadFromString',
+      2 => 'ViewCest:testLoadNoPHP',
+    ),
+    114 => 
+    array (
+      0 => 'ViewCest:testProcessingVariables',
+      1 => 'ViewCest:testLoadFromString',
+      2 => 'ViewCest:testLoadNoPHP',
+    ),
+    116 => 
+    array (
+      0 => 'ViewCest:testLoadFromString',
+    ),
+    117 => 
+    array (
+      0 => 'ViewCest:testProcessingVariables',
+      1 => 'ViewCest:testLoadFromString',
+      2 => 'ViewCest:testLoadNoPHP',
+    ),
+    119 => 
+    array (
+      0 => 'ViewCest:testProcessingVariables',
+      1 => 'ViewCest:testLoadFromString',
+      2 => 'ViewCest:testLoadNoPHP',
+    ),
+    120 => NULL,
+    129 => 
+    array (
+      0 => 'ViewCest:testToString',
+      1 => 'ViewCest:testLoad',
+      2 => 'ViewCest:testMultipleSameValues',
+    ),
+    130 => NULL,
+    139 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testToString',
+      4 => 'ViewCest:testLoad',
+      5 => 'ViewCest:testMultipleSameValues',
+      6 => 'ViewCest:testMagic',
+      7 => 'ViewCest:testProcessingVariables',
+      8 => 'ViewCest:testLoadFromString',
+      9 => 'ViewCest:testLoadNoPHP',
+      10 => 'ViewCest:testSpecialFilesContent',
+    ),
+    140 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testToString',
+      4 => 'ViewCest:testLoad',
+      5 => 'ViewCest:testMultipleSameValues',
+      6 => 'ViewCest:testMagic',
+      7 => 'ViewCest:testProcessingVariables',
+      8 => 'ViewCest:testLoadFromString',
+      9 => 'ViewCest:testLoadNoPHP',
+      10 => 'ViewCest:testSpecialFilesContent',
+    ),
+    141 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testToString',
+      4 => 'ViewCest:testLoad',
+      5 => 'ViewCest:testMultipleSameValues',
+      6 => 'ViewCest:testMagic',
+      7 => 'ViewCest:testProcessingVariables',
+      8 => 'ViewCest:testLoadFromString',
+      9 => 'ViewCest:testLoadNoPHP',
+      10 => 'ViewCest:testSpecialFilesContent',
+    ),
+    143 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testToString',
+      4 => 'ViewCest:testLoad',
+      5 => 'ViewCest:testMultipleSameValues',
+      6 => 'ViewCest:testMagic',
+      7 => 'ViewCest:testProcessingVariables',
+      8 => 'ViewCest:testLoadFromString',
+      9 => 'ViewCest:testLoadNoPHP',
+      10 => 'ViewCest:testSpecialFilesContent',
+    ),
+    144 => NULL,
+    154 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testToString',
+      4 => 'ViewCest:testLoad',
+      5 => 'ViewCest:testMultipleSameValues',
+      6 => 'ViewCest:testMagic',
+      7 => 'ViewCest:testProcessingVariables',
+      8 => 'ViewCest:testLoadFromString',
+      9 => 'ViewCest:testLoadNoPHP',
+      10 => 'ViewCest:testSpecialFilesContent',
+    ),
+    155 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testToString',
+      4 => 'ViewCest:testLoad',
+      5 => 'ViewCest:testMultipleSameValues',
+      6 => 'ViewCest:testMagic',
+      7 => 'ViewCest:testProcessingVariables',
+      8 => 'ViewCest:testLoadFromString',
+      9 => 'ViewCest:testLoadNoPHP',
+      10 => 'ViewCest:testSpecialFilesContent',
+    ),
+    156 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testToString',
+      4 => 'ViewCest:testLoad',
+      5 => 'ViewCest:testMultipleSameValues',
+      6 => 'ViewCest:testMagic',
+      7 => 'ViewCest:testProcessingVariables',
+      8 => 'ViewCest:testLoadFromString',
+      9 => 'ViewCest:testLoadNoPHP',
+      10 => 'ViewCest:testSpecialFilesContent',
+    ),
+    158 => 
+    array (
+      0 => 'ViewCest:testRender',
+      1 => 'ViewCest:testMultipleRender',
+      2 => 'ViewCest:testOverwriteDataAndSetDataRender',
+      3 => 'ViewCest:testToString',
+      4 => 'ViewCest:testLoad',
+      5 => 'ViewCest:testMultipleSameValues',
+      6 => 'ViewCest:testMagic',
+      7 => 'ViewCest:testProcessingVariables',
+      8 => 'ViewCest:testLoadFromString',
+      9 => 'ViewCest:testLoadNoPHP',
+      10 => 'ViewCest:testSpecialFilesContent',
+    ),
+    159 => NULL,
+    170 => 
+    array (
+      0 => 'ViewCest:testMagic',
+    ),
+    171 => NULL,
+    183 => 
+    array (
+      0 => 'ViewCest:testMagic',
+    ),
+    184 => NULL,
+    195 => 
+    array (
+      0 => 'ViewCest:testGet',
+      1 => 'ViewCest:testGetUnsetData',
+      2 => 'ViewCest:testMagic',
+    ),
+    196 => 
+    array (
+      0 => 'ViewCest:testGet',
+      1 => 'ViewCest:testGetUnsetData',
+      2 => 'ViewCest:testMagic',
+    ),
+    197 => 
+    array (
+      0 => 'ViewCest:testGet',
+      1 => 'ViewCest:testMagic',
+    ),
+    198 => NULL,
+    200 => 
+    array (
+      0 => 'ViewCest:testGetUnsetData',
+    ),
+    201 => NULL,
+    210 => 
+    array (
+      0 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    212 => 
+    array (
+      0 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    213 => NULL,
+    222 => 
+    array (
+      0 => 'ViewCest:testGetAllDataAndResetData',
+    ),
+    223 => NULL,
+  ),
+  'C:\\OpenServer\\domains\\view\\src\\Zver\\Exceptions\\View\\ViewNotFoundException.php' => 
+  array (
+    15 => 
+    array (
+      0 => 'ViewCest:testUnExistedFile',
+    ),
+    16 => 
+    array (
+      0 => 'ViewCest:testUnExistedFile',
+    ),
+  ),
+));
+$coverage->setTests(array (
+  'ViewCest:testRender' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testMultipleRender' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testOverwriteDataAndSetDataRender' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testGet' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testGetUnsetData' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testToString' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testLoad' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testUnExistedFile' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testMultipleSameValues' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testMagic' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testProcessingVariables' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testLoadFromString' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testLoadNoPHP' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testSpecialFilesContent' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+  'ViewCest:testGetAllDataAndResetData' => 
+  array (
+    'size' => 'unknown',
+    'status' => NULL,
+  ),
+));
+
+$filter = $coverage->filter();
+$filter->setWhitelistedFiles(array (
+  'C:\\OpenServer\\domains\\view\\src\\Zver\\Exceptions\\View\\ViewNotFoundException.php' => true,
+  'C:\\OpenServer\\domains\\view\\src\\Zver\\View.php' => true,
+));
+
+return $coverage;
