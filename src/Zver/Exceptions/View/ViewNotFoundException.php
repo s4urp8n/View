@@ -1,10 +1,9 @@
 <?php
-namespace Zver\Exceptions\View
-{
-    
+namespace Zver\Exceptions\View {
+
     class ViewNotFoundException extends \Exception
     {
-        
+
         /**
          * Override parent constructor to see custom exception message
          *
@@ -14,6 +13,6 @@ namespace Zver\Exceptions\View
         {
             parent::__construct(' View file "' . $filePath . '" not found');
         }
-        
+
     }
 }

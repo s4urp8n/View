@@ -2,19 +2,18 @@
 
 Template engine with auto escaping html entities and with full PHP-native code support
 
-[Documentation](docs/markdown/API.md)
+## Examples
 
-#### Prepare package
+```php
+ View::loadFromString('{{ $caption}}<?=$caption2?>   <?=$caption3?>')
+                ->set('caption', 1)
+                ->set('caption2', 'hello')
+                ->set('caption3', 'meet')
+                ->render();
 ```
-php prepare.php
-```
-
-#### Test package
-```
-php test.php
-```
-
-#### Generate package documentation in HTML and Markdown
-```
-php doc.php
+OR
+```php
+  View::loadFromFile('filename)
+                ->set('caption', 1)
+                ->render();
 ```
