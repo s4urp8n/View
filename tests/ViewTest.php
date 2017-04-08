@@ -4,7 +4,7 @@ use Zver\View;
 
 class ViewTest extends PHPUnit\Framework\TestCase
 {
-    use \Zver\Package\Test;
+    use \Zver\Package\Helper;
 
     public static $ext = 'php';
 
