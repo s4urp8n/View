@@ -1,4 +1,5 @@
 <?php
+
 namespace Zver {
 
     use Zver\Exceptions\View\ViewNotFoundException;
@@ -38,7 +39,7 @@ namespace Zver {
          * Create view instance, set content and data from second argument
          *
          * @param string $file
-         * @param array  $data
+         * @param array $data
          *
          * @return static
          */
@@ -70,7 +71,7 @@ namespace Zver {
          * Store value associated with key in data array
          *
          * @param string $key
-         * @param mixed  $value
+         * @param mixed $value
          *
          * @return $this
          */
