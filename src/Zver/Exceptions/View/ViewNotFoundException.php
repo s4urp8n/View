@@ -1,4 +1,5 @@
 <?php
+
 namespace Zver\Exceptions\View {
 
     class ViewNotFoundException extends \Exception

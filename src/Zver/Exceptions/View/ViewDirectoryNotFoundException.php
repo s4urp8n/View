@@ -4,6 +4,15 @@ namespace Zver\Exceptions\View {
 
     class ViewDirectoryNotFoundException extends \Exception
     {
-        protected $message = 'View directory not exists or not a directory';
+
+        /**
+         * Override parent constructor to see custom exception message
+         *
+         * @param string $message
+         */
+        public function __construct($directory)
+        {
+            parent::__construct('View directory  "' . $directory . '" not exists or not a directory');
+        }
     }
 }

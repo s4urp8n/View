@@ -67,7 +67,7 @@ namespace Zver {
                         static::$searchDirectories = array_merge([$dir], static::$searchDirectories);
                     }
                 } else {
-                    throw new ViewDirectoryNotFoundException();
+                    throw new ViewDirectoryNotFoundException($dir);
                 }
             }
         }
