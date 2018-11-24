@@ -18,6 +18,117 @@ class ViewTest extends PHPUnit\Framework\TestCase
         'view7' => '<?php class SuperNewClass243{}',
     ];
 
+    public function testSearchDirs()
+    {
+        //empty by default
+        $dirs = View::getSearchDirectories();
+        $this->assertSame([], $dirs);
+
+        $dir = __DIR__ . DIRECTORY_SEPARATOR;
+        //up dir
+        $upDir = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . DIRECTORY_SEPARATOR;
+        //loaddir
+        $loadDir = $upDir . 'load' . DIRECTORY_SEPARATOR;
+
+        //current dir
+        View::addSearchDirectory($dir);
+
+        $dirs = View::getSearchDirectories();
+        $this->assertSame([$dir], $dirs);
+
+        //current dir again
+        View::addSearchDirectory($dir);
+        $dirs = View::getSearchDirectories();
+        $this->assertSame([$dir], $dirs);
+
+        View::addSearchDirectory($upDir);
+        $dirs = View::getSearchDirectories();
+        $this->assertSame([$upDir, $dir], $dirs);
+
+        View::addSearchDirectory($loadDir);
+        $dirs = View::getSearchDirectories();
+        $this->assertSame([$loadDir, $upDir, $dir], $dirs);
+
+        View::addSearchDirectory($loadDir);
+        View::addSearchDirectory($upDir);
+        $dirs = View::getSearchDirectories();
+        $this->assertSame([$loadDir, $upDir, $dir], $dirs);
+    }
+
+    public function testUnExistedDir()
+    {
+        $this->expectException('\Zver\Exceptions\View\ViewDirectoryNotFoundException');
+        View::addSearchDirectory('unexistedFile');
+    }
+
+    public function testAutodetection()
+    {
+
+        $upDir = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . DIRECTORY_SEPARATOR;
+
+        $this->testSearchDirs();
+
+        //String
+        $view = View::load('this is string')
+                    ->render();
+
+        $this->assertSame($view, 'this is string');
+
+        //paths
+
+        //view 1
+        $view = View::load('view1')
+                    ->set('number', 55)
+                    ->render();
+
+        $this->assertSame($view, 'view1 55');
+
+        //view 1
+        $view = View::load('view1.php')
+                    ->set('number', 55)
+                    ->render();
+
+        $this->assertSame($view, 'view1 55');
+
+
+        //view 2
+        $view = View::load('yeap/view2')
+                    ->set('number', 555)
+                    ->render();
+
+        $this->assertSame($view, 'view2 555');
+
+        //view 2
+        $view = View::load('////////\\\\\\yeap/\\\////view2')
+                    ->set('number', 555)
+                    ->render();
+
+        $this->assertSame($view, 'view2 555');
+
+        //view 2
+        $view = View::load('////////\\\\\\yeap/\\\////view2.php')
+                    ->set('number', 666)
+                    ->render();
+
+        $this->assertSame($view, 'view2 666');
+
+        //absolute path
+        $view = View::load($upDir . 'load////\\\view1.php')
+                    ->set('number', 666)
+                    ->render();
+
+        $this->assertSame($view, 'view1 666');
+
+        //absolute path
+        $view = View::load($upDir . 'load////\\\view1')
+                    ->set('number', 666)
+                    ->render();
+
+        $this->assertSame($view, 'view1 666');
+
+
+    }
+
     public static function setUpBeforeClass()
     {
         foreach (static::$testFiles as $file => $content) {
@@ -220,6 +331,8 @@ class ViewTest extends PHPUnit\Framework\TestCase
 
         View::loadFromFile($this->_getViewFileName(7))
             ->render();
+
+        $this->assertTrue(true);
 
     }
 

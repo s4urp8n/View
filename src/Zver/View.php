@@ -2,6 +2,7 @@
 
 namespace Zver {
 
+    use Zver\Exceptions\View\ViewDirectoryNotFoundException;
     use Zver\Exceptions\View\ViewNotFoundException;
 
     /**
@@ -12,20 +13,29 @@ namespace Zver {
     class View
     {
 
+        protected static $ext = '.php';
+
         /**
          * Separator to data keys if multiple variables have same value
          *
          * @var string
          */
         protected static $dataKeySeparator = '|';
+
         /**
          * @var string Variable to store view content
          */
         protected $content;
+
         /**
          * @var array Variable to store view data
          */
         protected $data = [];
+
+        /**
+         * @var array of directories to search views
+         */
+        protected static $searchDirectories = [];
 
         /**
          * View constructor. Protected to prevent uncontrolled instance creation
@@ -33,6 +43,112 @@ namespace Zver {
         protected function __construct()
         {
 
+        }
+
+        /**
+         * Set search directory
+         *
+         * @param string $dir Path to directory where view can be found
+         */
+        public static function addSearchDirectory($dir)
+        {
+            if (!empty($dir)) {
+
+                clearstatcache(true);
+
+                $dir = StringHelper::load($dir)
+                                   ->ensureEndingIs(DIRECTORY_SEPARATOR)
+                                   ->get();
+
+                $dir = Common::replaceSlashesToPlatformSlashes($dir);
+
+                if (is_dir($dir)) {
+                    if (!in_array($dir, static::$searchDirectories)) {
+                        static::$searchDirectories = array_merge([$dir], static::$searchDirectories);
+                    }
+                } else {
+                    throw new ViewDirectoryNotFoundException();
+                }
+            }
+        }
+
+        /**
+         * Get all search directories
+         *
+         * @return array
+         */
+        public static function getSearchDirectories()
+        {
+            return static::$searchDirectories;
+        }
+
+        /**
+         * Get full path of file or return false
+         *
+         * @param $path string Absolute path or relative to search dirs path
+         * @return boolean | string
+         */
+        protected static function findView($path)
+        {
+            if (!empty($path)) {
+
+                clearstatcache(true);
+
+                $absolutePath = StringHelper::load(Common::replaceSlashesToPlatformSlashes($path))
+                                            ->ensureEndingIs(static::$ext)
+                                            ->get();
+
+                /**
+                 * Check if path is absolute
+                 */
+                if (file_exists($absolutePath)) {
+                    return $absolutePath;
+                }
+
+                /**
+                 * Ensure path format
+                 */
+                $viewName = StringHelper::load($path)
+                                        ->remove('^[' . preg_quote('/') . preg_quote('\\') . '\s]+')
+                                        ->ensureEndingIs(static::$ext)
+                                        ->get();
+
+                $viewName = Common::replaceSlashesToPlatformSlashes($viewName);
+
+
+                /**
+                 * Search in directories
+                 */
+                $fullName = '';
+
+                foreach (static::$searchDirectories as $directory) {
+                    $fullName = $directory . $viewName;
+                    if (file_exists($fullName)) {
+                        return $fullName;
+                    }
+                }
+
+            }
+
+            return false;
+        }
+
+        /**
+         * Load view's file or view's string (autodetect)
+         *
+         * @param $fileOrString
+         * @param array $data
+         * @return View
+         * @throws ViewNotFoundException
+         */
+        public static function load($fileOrString, array $data = [])
+        {
+            $view = static::findView($fileOrString);
+
+            if ($view == false) {
+                return static::loadFromString($fileOrString, $data);
+            }
+            return static::loadFromFile($view, $data);
         }
 
         /**
@@ -54,6 +170,7 @@ namespace Zver {
 
                 return $object;
             }
+
             throw new ViewNotFoundException($file, null);
         }
 
