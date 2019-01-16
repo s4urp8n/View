@@ -1,4 +1,4 @@
-# Zver\View
+# Zver\View [![Build Status](https://travis-ci.org/s4urp8n/view.svg?branch=master)](https://travis-ci.org/s4urp8n/view)
 
 Template engine with auto escaping html entities and with full PHP-native code support
 
