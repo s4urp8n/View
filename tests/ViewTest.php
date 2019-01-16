@@ -4,8 +4,6 @@ use Zver\View;
 
 class ViewTest extends PHPUnit\Framework\TestCase
 {
-    use \Zver\Package\Helper;
-
     public static $ext = 'php';
 
     public static $testFiles = [
@@ -21,7 +19,7 @@ class ViewTest extends PHPUnit\Framework\TestCase
     public function testSearchDirs()
     {
         //empty by default
-        $dirs = View::getSearchDirectories();
+        $dirs = View::getViewsDirectories();
         $this->assertSame([], $dirs);
 
         $dir = __DIR__ . DIRECTORY_SEPARATOR;
@@ -31,34 +29,34 @@ class ViewTest extends PHPUnit\Framework\TestCase
         $loadDir = $upDir . 'load' . DIRECTORY_SEPARATOR;
 
         //current dir
-        View::addSearchDirectory($dir);
+        View::addViewsDirectory($dir);
 
-        $dirs = View::getSearchDirectories();
+        $dirs = View::getViewsDirectories();
         $this->assertSame([$dir], $dirs);
 
         //current dir again
-        View::addSearchDirectory($dir);
-        $dirs = View::getSearchDirectories();
+        View::addViewsDirectory($dir);
+        $dirs = View::getViewsDirectories();
         $this->assertSame([$dir], $dirs);
 
-        View::addSearchDirectory($upDir);
-        $dirs = View::getSearchDirectories();
+        View::addViewsDirectory($upDir);
+        $dirs = View::getViewsDirectories();
         $this->assertSame([$upDir, $dir], $dirs);
 
-        View::addSearchDirectory($loadDir);
-        $dirs = View::getSearchDirectories();
+        View::addViewsDirectory($loadDir);
+        $dirs = View::getViewsDirectories();
         $this->assertSame([$loadDir, $upDir, $dir], $dirs);
 
-        View::addSearchDirectory($loadDir);
-        View::addSearchDirectory($upDir);
-        $dirs = View::getSearchDirectories();
+        View::addViewsDirectory($loadDir);
+        View::addViewsDirectory($upDir);
+        $dirs = View::getViewsDirectories();
         $this->assertSame([$loadDir, $upDir, $dir], $dirs);
     }
 
     public function testUnExistedDir()
     {
-        $this->expectException('\Zver\Exceptions\View\ViewDirectoryNotFoundException');
-        View::addSearchDirectory('unexistedFile');
+        $this->expectException('\Zver\Exceptions\View\ViewDirectoryNotFound');
+        View::addViewsDirectory('unexistedFile');
     }
 
     public function testAutodetection()
@@ -218,7 +216,7 @@ class ViewTest extends PHPUnit\Framework\TestCase
 
     public function testUnExistedFile()
     {
-        $this->expectException('\Zver\Exceptions\View\ViewNotFoundException');
+        $this->expectException('\Zver\Exceptions\View\ViewNotFound');
         View::loadFromFile('unexistedFile')
             ->render();
     }

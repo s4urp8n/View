@@ -2,13 +2,15 @@
 
 namespace Zver\Exceptions\View {
 
-    class ViewDirectoryNotFoundException extends \Exception
+    /**
+     * Class ViewDirectoryNotFound
+     * @package Zver\Exceptions\View
+     */
+    class ViewDirectoryNotFound extends \Exception
     {
-
         /**
-         * Override parent constructor to see custom exception message
-         *
-         * @param string $message
+         * ViewDirectoryNotFound constructor.
+         * @param $directory
          */
         public function __construct($directory)
         {

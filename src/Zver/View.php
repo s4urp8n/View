@@ -2,8 +2,8 @@
 
 namespace Zver {
 
-    use Zver\Exceptions\View\ViewDirectoryNotFoundException;
-    use Zver\Exceptions\View\ViewNotFoundException;
+    use Zver\Exceptions\View\ViewDirectoryNotFound;
+    use Zver\Exceptions\View\ViewNotFound;
 
     /**
      * Template engine with auto escaping html entities and with full PHP-native code support
@@ -13,80 +13,94 @@ namespace Zver {
     class View
     {
 
-        protected static $ext = '.php';
-
         /**
-         * Separator to data keys if multiple variables have same value
-         *
+         * @var string
+         */
+        protected static $encoding = 'UTF-8';
+        /**
+         * @var string
+         */
+        protected static $ext = '.php';
+        /**
          * @var string
          */
         protected static $dataKeySeparator = '|';
-
         /**
-         * @var string Variable to store view content
-         */
-        protected $content;
-
-        /**
-         * @var array Variable to store view data
-         */
-        protected $data = [];
-
-        /**
-         * @var array of directories to search views
+         * @var array
          */
         protected static $searchDirectories = [];
 
         /**
-         * View constructor. Protected to prevent uncontrolled instance creation
+         * @var
          */
+        protected $content;
+        /**
+         * @var array
+         */
+        protected $data = [];
+
         protected function __construct()
         {
-
         }
 
         /**
-         * Set search directory
-         *
-         * @param string $dir Path to directory where view can be found
+         * @param $string
+         * @param $end
+         * @return string
          */
-        public static function addSearchDirectory($dir)
+        protected static function ensureEnds($string, $end)
+        {
+            $currentEnd = mb_substr($string, -mb_strlen($end, static::$encoding), null, static::$encoding);
+
+            if ($currentEnd == $end) {
+                return $string;
+            }
+
+            return $string . $end;
+        }
+
+        /**
+         * @param $path
+         * @return false|string
+         */
+        protected static function replaceSlashes($path)
+        {
+            return mb_eregi_replace('[' . preg_quote('/') . preg_quote('\\') . ']+', DIRECTORY_SEPARATOR, $path);
+        }
+
+        /**
+         * @param $dir
+         * @throws \Zver\Exceptions\View\ViewDirectoryNotFound
+         */
+        public static function addViewsDirectory($dir)
         {
             if (!empty($dir)) {
 
                 clearstatcache(true);
 
-                $dir = StringHelper::load($dir)
-                                   ->ensureEndingIs(DIRECTORY_SEPARATOR)
-                                   ->get();
-
-                $dir = Common::replaceSlashesToPlatformSlashes($dir);
+                $dir = static::replaceSlashes(static::ensureEnds($dir, DIRECTORY_SEPARATOR));
 
                 if (is_dir($dir)) {
                     if (!in_array($dir, static::$searchDirectories)) {
                         static::$searchDirectories = array_merge([$dir], static::$searchDirectories);
                     }
                 } else {
-                    throw new ViewDirectoryNotFoundException($dir);
+                    throw new ViewDirectoryNotFound($dir);
                 }
             }
         }
 
         /**
-         * Get all search directories
-         *
          * @return array
          */
-        public static function getSearchDirectories()
+        public static function getViewsDirectories()
         {
             return static::$searchDirectories;
         }
 
         /**
-         * Get full path of file or return false
-         *
-         * @param $path string Absolute path or relative to search dirs path
-         * @return boolean | string
+         * @param $path
+         * @return bool|string
          */
         protected static function findView($path)
         {
@@ -94,9 +108,7 @@ namespace Zver {
 
                 clearstatcache(true);
 
-                $absolutePath = StringHelper::load(Common::replaceSlashesToPlatformSlashes($path))
-                                            ->ensureEndingIs(static::$ext)
-                                            ->get();
+                $absolutePath = static::ensureEnds(static::replaceSlashes($path), static::$ext);
 
                 /**
                  * Check if path is absolute
@@ -108,13 +120,8 @@ namespace Zver {
                 /**
                  * Ensure path format
                  */
-                $viewName = StringHelper::load($path)
-                                        ->remove('^[' . preg_quote('/') . preg_quote('\\') . '\s]+')
-                                        ->ensureEndingIs(static::$ext)
-                                        ->get();
-
-                $viewName = Common::replaceSlashesToPlatformSlashes($viewName);
-
+                $viewName = mb_ereg_replace('^[' . preg_quote('/') . preg_quote('\\') . '\s]+', '', $path);
+                $viewName = static::replaceSlashes(static::ensureEnds($viewName, static::$ext));
 
                 /**
                  * Search in directories
@@ -134,12 +141,10 @@ namespace Zver {
         }
 
         /**
-         * Load view's file or view's string (autodetect)
-         *
-         * @param $fileOrString
+         * @param       $fileOrString
          * @param array $data
-         * @return View
-         * @throws ViewNotFoundException
+         * @return \Zver\View
+         * @throws \Zver\Exceptions\View\ViewNotFound
          */
         public static function load($fileOrString, array $data = [])
         {
@@ -155,9 +160,10 @@ namespace Zver {
          * Create view instance, set content and data from second argument
          *
          * @param string $file
-         * @param array $data
+         * @param array  $data
          *
          * @return static
+         * @throws \Zver\Exceptions\View\ViewNotFound
          */
         public static function loadFromFile($file, array $data = [])
         {
@@ -171,7 +177,7 @@ namespace Zver {
                 return $object;
             }
 
-            throw new ViewNotFoundException($file, null);
+            throw new ViewNotFound($file);
         }
 
         /**
@@ -188,7 +194,7 @@ namespace Zver {
          * Store value associated with key in data array
          *
          * @param string $key
-         * @param mixed $value
+         * @param mixed  $value
          *
          * @return $this
          */
@@ -261,7 +267,7 @@ namespace Zver {
         protected function processEscapedContent()
         {
             $expressionPattern = "/\\{\\{(.+)\\}\\}/mU";
-            $replacement = '<?= htmlentities($1, ENT_QUOTES, "' . Common::getDefaultEncoding() . '", true)?>';
+            $replacement = '<?= htmlentities($1, ENT_QUOTES, "' . static::$encoding . '", true)?>';
             $this->content = preg_replace($expressionPattern, $replacement, $this->content);
 
             return $this->content;

@@ -18,8 +18,7 @@
     }
   },
   "require": {
-    "zver/common": "^3",
-    "zver/string-helper": "^2.2"
+    "ext-mbstring": "*"
   },
   "require-dev": {
   }
